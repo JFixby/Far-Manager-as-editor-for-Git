@@ -13,7 +13,8 @@ int wmain(int argc, wchar_t* argv[], wchar_t*)
     {
         LPTSTR p = GetCommandLine();
         std::wcmatch m {};
-        if (std::regex_match(p, m, std::wregex {LR"(".*"[[:s:]](.*))"}) || std::regex_match(p, m, std::wregex {LR"(.*?[[:s:]](.*))"}))
+        if (std::regex_match(p, m, std::wregex {LR"(".*"[[:s:]](.*))"}) ||
+            std::regex_match(p, m, std::wregex {LR"(.*?[[:s:]](.*))"}))
         {
             size_t size = m[1].length() + 1;
             p = static_cast<LPTSTR> (HeapAlloc(GetProcessHeap(), 0, size * sizeof(TCHAR)));
