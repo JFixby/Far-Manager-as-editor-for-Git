@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <MinimalRebuild />
+      <StringPooling />
+      <ControlFlowGuard />
+    </ClCompile>
+    <ClCompile Condition="$(DebugConfiguration)">
+      <SmallerTypeCheck />
+      <BasicRuntimeChecks />
+    </ClCompile>
+    <ClCompile Condition="!$(DebugConfiguration)">
+      <FunctionLevelLinking />
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>
